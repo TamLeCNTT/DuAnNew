@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+    layout:decorate="~{LayoutWeb/dashboardLayout.html}">
+<meta charset="UTF-8" />
+<head>
+</head>
+<body >
+    <div style="height: 150px;margin-bottom: 300px"layout:fragment="content" >
+    <div class="login-boxx"  >
+        <h3 style="margin-bottom: 10px;">Xác nhận tài khoản</h3>
+        <p style="color:white;margin-top: 0px;font-size: 18px;" th:text="'Enter password sent to your email address: 
+				'+${gmail}"></p>
+				<br>
+        <form th:action="@{/xacnhan}" method="post">
+            
+            <div class="user-box" style="margin-bottom: 0px">
+                <input type="text" name="code"required="" style="margin-bottom: 10px"placeholder="Nhập mã OTP">
+                  <a href="/xacnhan"
+                    style="color: rgb(255, 153, 0); text-decoration: none;">Gủi lại mã</a>
+            </div>
+           
+                
+             
+            
+            <button type="submit" class="clasaa button text-center align-center" style=" background: linear-gradient(#141e30, #243b55);     margin-left: calc(63px + 2vmin);;border: #fff;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+               Xác nhận
+            </button>
+            
+        </form>
+    </div>
+</div>
+</body>
+</html>
